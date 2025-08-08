@@ -14,9 +14,15 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Learn more about it here: https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#reducing-bundle-size
  */
 type Documents = {
+  '\n  query GetFilm($id: String!) {\n    film(id: $id) {\n      id\n      title\n      original_title\n      original_title_romanised\n      description\n      director\n      producer\n      release_date\n      running_time\n      rt_score\n      people\n      species\n      locations\n      vehicles\n      url\n    }\n  }\n': typeof types.GetFilmDocument;
+  '\n  query GetAllFilms {\n    films {\n      id\n      title\n      original_title\n      original_title_romanised\n      description\n      director\n      producer\n      release_date\n      running_time\n      rt_score\n      people\n      species\n      locations\n      vehicles\n      url\n    }\n  }\n': typeof types.GetAllFilmsDocument;
   '\n  query GetHelloWorld {\n    helloWorld {\n      message\n    }\n  }\n': typeof types.GetHelloWorldDocument;
 };
 const documents: Documents = {
+  '\n  query GetFilm($id: String!) {\n    film(id: $id) {\n      id\n      title\n      original_title\n      original_title_romanised\n      description\n      director\n      producer\n      release_date\n      running_time\n      rt_score\n      people\n      species\n      locations\n      vehicles\n      url\n    }\n  }\n':
+    types.GetFilmDocument,
+  '\n  query GetAllFilms {\n    films {\n      id\n      title\n      original_title\n      original_title_romanised\n      description\n      director\n      producer\n      release_date\n      running_time\n      rt_score\n      people\n      species\n      locations\n      vehicles\n      url\n    }\n  }\n':
+    types.GetAllFilmsDocument,
   '\n  query GetHelloWorld {\n    helloWorld {\n      message\n    }\n  }\n':
     types.GetHelloWorldDocument,
 };
@@ -35,6 +41,18 @@ const documents: Documents = {
  */
 export function gql(source: string): unknown;
 
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(
+  source: '\n  query GetFilm($id: String!) {\n    film(id: $id) {\n      id\n      title\n      original_title\n      original_title_romanised\n      description\n      director\n      producer\n      release_date\n      running_time\n      rt_score\n      people\n      species\n      locations\n      vehicles\n      url\n    }\n  }\n',
+): (typeof documents)['\n  query GetFilm($id: String!) {\n    film(id: $id) {\n      id\n      title\n      original_title\n      original_title_romanised\n      description\n      director\n      producer\n      release_date\n      running_time\n      rt_score\n      people\n      species\n      locations\n      vehicles\n      url\n    }\n  }\n'];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(
+  source: '\n  query GetAllFilms {\n    films {\n      id\n      title\n      original_title\n      original_title_romanised\n      description\n      director\n      producer\n      release_date\n      running_time\n      rt_score\n      people\n      species\n      locations\n      vehicles\n      url\n    }\n  }\n',
+): (typeof documents)['\n  query GetAllFilms {\n    films {\n      id\n      title\n      original_title\n      original_title_romanised\n      description\n      director\n      producer\n      release_date\n      running_time\n      rt_score\n      people\n      species\n      locations\n      vehicles\n      url\n    }\n  }\n'];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

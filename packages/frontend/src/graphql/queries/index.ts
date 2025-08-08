@@ -7,3 +7,6 @@ export const GET_HELLO_WORLD = gql(`
     }
   }
 `);
+
+// Export film queries
+export * from './films';
